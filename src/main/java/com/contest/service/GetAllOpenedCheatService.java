@@ -19,7 +19,7 @@ public class GetAllOpenedCheatService {
     /** 箱子数量*/
     private static final int SIZE = 10;
     /** 第一个箱子*/
-    private static final int FIRST = 10;
+    private static final int FIRST = 1;
     public List<TreasureChest> getAllCheat(){
         addOpenedChest();
         return treasureChestList;
