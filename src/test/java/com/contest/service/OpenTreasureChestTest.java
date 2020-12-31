@@ -1,4 +1,4 @@
-package com.contest.main;
+package com.contest.service;
 
 import com.contest.domain.TreasureChest;
 import org.junit.Test;
@@ -14,7 +14,6 @@ public class OpenTreasureChestTest{
         treasureChest = new TreasureChest();
         treasureChest.setId("1");
         treasureChest.setPreHash("0");
-        treasureChest.setTimeStamp(String.valueOf(System.currentTimeMillis()));
         openTreasureChest.openTreasureChest(treasureChest);
         assertEquals("00000",treasureChest.getHash().substring(0,5));
     }

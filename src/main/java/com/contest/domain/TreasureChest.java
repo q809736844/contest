@@ -7,17 +7,19 @@ package com.contest.domain;
  * @create: 2020-12-31 15:07
  */
 public class TreasureChest {
+    /** 宝箱id */
     private String id;
-    private String timeStamp;
+    /** 宝箱hash值 */
     private String hash;
+    /** 上一个宝箱hash值 */
     private String preHash;
+    /** 神秘数字 */
     private int mysteriousNumber;
 
     @Override
     public String toString() {
         return "TreasureChest{" +
                 "id='" + id + '\'' +
-                ", timeStamp='" + timeStamp + '\'' +
                 ", hash='" + hash + '\'' +
                 ", preHash='" + preHash + '\'' +
                 ", mysteriousNumber=" + mysteriousNumber +
@@ -30,14 +32,6 @@ public class TreasureChest {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getTimeStamp() {
-        return String.valueOf(System.currentTimeMillis());
-    }
-
-    public void setTimeStamp(String timeStamp) {
-        this.timeStamp = timeStamp;
     }
 
     public String getHash() {
