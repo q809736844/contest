@@ -16,6 +16,10 @@ public class GetAllOpenedCheatService {
     private OpenTreasureChestService openTreasureChestService = new OpenTreasureChestService();
     /** 箱子数组*/
     private List<TreasureChest> treasureChestList = new ArrayList<>();
+    /** 箱子数量*/
+    private static final int SIZE = 10;
+    /** 第一个箱子*/
+    private static final int FIRST = 10;
     public List<TreasureChest> getAllCheat(){
         addOpenedChest();
         return treasureChestList;
@@ -30,7 +34,7 @@ public class GetAllOpenedCheatService {
      *@date: 2020/12/31
      */
     public List<TreasureChest> addOpenedChest(){
-        for(int i=1;i<=10;i++){
+        for(int i=FIRST;i<=SIZE;i++){
             String preHash = getPreHash(i);
             TreasureChest treasureChest = new TreasureChest(String.valueOf(i),preHash);
             openTreasureChestService.openTreasureChest(treasureChest);
@@ -46,6 +50,6 @@ public class GetAllOpenedCheatService {
      *@date: 2020/12/31
      */
     public String getPreHash(int boxId){
-        return boxId == 1 ? ZERO_HASH : treasureChestList.get(boxId-2).getHash();
+        return boxId == FIRST ? ZERO_HASH : treasureChestList.get(boxId-2).getHash();
     }
 }
