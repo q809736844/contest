@@ -26,6 +26,11 @@ public class TreasureChest {
                 '}';
     }
 
+    public TreasureChest(String id, String preHash) {
+        this.id = id;
+        this.preHash = preHash;
+    }
+
     public String getId() {
         return id;
     }
