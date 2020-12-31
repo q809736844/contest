@@ -45,7 +45,7 @@ public class GetAllOpenedCheatService {
      *@Author: guoyunhao
      *@date: 2020/12/31
      */
-    public String  getPreHash(int boxId){
+    public String getPreHash(int boxId){
         return boxId == 1 ? ZERO_HASH : treasureChestList.get(boxId-2).getHash();
     }
 }
