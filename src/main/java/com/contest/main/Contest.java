@@ -1,6 +1,7 @@
 package com.contest.main;
 
 import com.contest.domain.TreasureChest;
+import com.contest.service.GetAllOpenedCheatService;
 import com.contest.service.OpenTreasureChestService;
 
 import java.util.*;
@@ -13,17 +14,8 @@ import java.util.*;
  */
 public class Contest {
     public static void main(String[] args) {
-        List<TreasureChest> list = new ArrayList<>();
-        String preHash = "0";
-        OpenTreasureChestService openTreasureChestService = new OpenTreasureChestService();
-        for(int i=1;i<=10;i++){
-            preHash = i==1?"0":list.get(i-2).getHash();
-            TreasureChest treasureChest = new TreasureChest(String.valueOf(i),preHash);
-
-            openTreasureChestService.openTreasureChest(treasureChest);
-            list.add(treasureChest);
-        }
-
+        GetAllOpenedCheatService getAllOpenedCheatService = new GetAllOpenedCheatService();
+        List<TreasureChest> list = getAllOpenedCheatService.getAllCheat();
         for (TreasureChest t:
              list) {
             System.out.println(t.toString());
