@@ -33,7 +33,7 @@ public class TreasureChest {
     }
 
     public String getTimeStamp() {
-        return timeStamp;
+        return String.valueOf(System.currentTimeMillis());
     }
 
     public void setTimeStamp(String timeStamp) {
